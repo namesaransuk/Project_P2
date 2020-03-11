@@ -1,0 +1,9 @@
+    #sisu {
+        background-image: url(../img/cbg2.png)
+    }
+
+    #img1 img {
+        border: 5px solid whitesmoke;
+        /* -webkit-filter: opacity(.2);
+        filter: opacity(.2); */
+    }

@@ -1,0 +1,38 @@
+.shopping-cart-container {
+    position: fixed;
+    top: 30%;
+    left: calc(100% - 60px);
+    transform: translateY(-50%);
+    width: 250px;
+    list-style: none;
+    padding: 0;
+    z-index: 5000;
+}
+
+.shopping-cart {
+    align-items: center;
+    display: flex;
+    transition: transform .3s ease-in-out;
+}
+
+.shopping-cart:hover {
+    transform: translateX(calc(-100% + 60px));
+}
+
+.shopping-cart.user {
+    background-color: #800000;
+}
+
+.shopping-cart i {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    width: 60px;
+}
+
+.shopping-cart a {
+    color: #ffffff;
+    padding: 0 10px;
+    text-decoration: none;
+}

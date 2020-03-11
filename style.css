@@ -1,0 +1,268 @@
+html body {
+    font-family: 'Prompt', sans-serif;
+}
+
+body {
+    background-image: url(img/pp.PNG);
+}
+
+.scroll {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* ลูกเล่น navbar ตัว active */
+
+#activepage.item {
+    color: #FFFFFF;
+    background-color: #8A2BE2;
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+    padding: 7px;
+    /* width: 120px; */
+}
+
+/* ลูกเล่นเอาเม้าไปชี้แล้ว bg แสดงสี */
+
+a.item {
+    color: black;
+    padding: 7px;
+    white-space: nowrap;
+    display: block;
+    margin: 2px;
+    /* width: 120px; */
+}
+
+a.item:hover {
+    color: #FFFFFF;
+    background-color: #8A2BE2;
+    text-decoration: none;
+    display: block;
+    padding: 7px;
+    border-radius: 4px;
+    transition: .3s;
+    /* width: 120px; */
+}
+
+#navhome.navbar {
+    padding: 4px;
+}
+
+#navnav.nav-item {
+    display: block;
+    /* margin-left: 20px; */
+    margin-right: 20px;
+    width: 100%;
+}
+
+#navnav.nav-item button {
+    margin-top: 2px;
+}
+
+a.dropdown-item:hover {
+    color: #FFFFFF;
+    background-color: #4B0082;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.img-responsive {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    transition: .3s;
+    /* display: block; */
+    /* max-width: 12rem; */
+    height: auto;
+}
+
+.img-responsive:hover {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+/* .overlay {
+    color: #ffffff;
+    background: #4B0082;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    -webkit-transition: opacity .25s ease;
+}
+
+.box:hover .overlay {
+    opacity: 1;
+} */
+
+#slidepro.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+/* carousel ตำแหน่งแบบวงกลม */
+
+#circle.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*  ส่วนเนื้อหาที่เลื่อนได้ในแนวนอน*/
+
+.scroll-x {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ส่วนกำหนดให้ไม่แสดง scrollbar ของเนื้อหาแนวนอนี่กำหนด
+
+.scroll-x::-webkit-scrollbar {
+     display: none; 
+} */
+
+/* width */
+
+.scroll-x::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+.scroll-x::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+
+.scroll-x::-webkit-scrollbar-thumb {
+    background: #8A2BE2;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+
+.scroll-x::-webkit-scrollbar-thumb:hover {
+    background: #4B0082;
+}
+
+/* ========================= */
+
+.card-group div.card {
+    min-width: 230px;
+}
+
+/* Footer */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 5px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #4B0082;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#footer {
+    background-image: linear-gradient(#9D50BB, #6E48AA);
+}
+
+#footer h5 {
+    padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#footer a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+#footer ul.social li {
+    padding: 3px 0;
+}
+
+#footer ul.social li a i {
+    margin-right: 5px;
+    font-size: 25px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+#footer ul.social li:hover a i {
+    font-size: 30px;
+    margin-top: -10px;
+}
+
+#footer ul.social li a, #footer ul.quick-links li a {
+    color: #ffffff;
+}
+
+#footer ul.social li a:hover {
+    color: #eeeeee;
+}
+
+#footer ul.quick-links li {
+    padding: 3px 0;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+#footer ul.quick-links li:hover {
+    padding: 3px 0;
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+#footer ul.quick-links li a i {
+    margin-right: 5px;
+}
+
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width: 576px) {
+    .img-responsive {
+        max-width: 10rem;
+    }
+  }
+
+@media (min-width: 576px) and (max-width:767px) {
+    #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
+    .img-responsive {
+        max-width: 12rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px){
+    .img-responsive {
+        max-width: 15rem;
+    }
+  }
+
+  /* @media (min-width: 992px) and (max-width: 1199.99px) { 
+    .hidden-lg1 { display: none !important;  }}
+
+  @media (min-width: 1200px) {
+    .hidden-lg2 { display: none !important; }
+  } */
