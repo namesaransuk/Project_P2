@@ -39,6 +39,12 @@
     input:active {
       color: pink;
     }
+
+    @media screen {
+      .hide-on-screen {
+        display: none;
+      }
+    }
   </style>
 
 </head>
@@ -243,7 +249,7 @@
             <div class="form-group text-center">
               <img src="img/2.png" class="" width="450" alt="">
               <br>
-              ยังไม่มีบัญชีใช่ไหมคลิกที่ <a href="#!">สมัครสมาชิก</a> สิ
+              ยังไม่มีบัญชีใช่ไหมคลิกที่ <a href="#!" data-toggle="modal" data-target="#centralModalSm">สมัครสมาชิก</a> สิ
             </div>
           </div>
           <div class="col">
@@ -277,6 +283,88 @@
     </div>
   </div>
 
+  <!-- Central Modal Small -->
+  <form action="" name="frg" method="POST" enctype="multipart/form-data" onsubmit="return Repassword()">
+    <div class="modal fade" style="z-index: 50000" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <!-- Change class .modal-sm to change the size of the modal -->
+      <div class="modal-dialog modal-lg" role="document">
+
+
+        <div class="modal-content">
+          <div class="modal-header deep-purple lighten-1">
+            <h4 class="modal-title w-100 text-white" id="myModalLabel">สมัครสมาชิก</h4>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <h2 class="text-center mb-4">สมัครสมาชิก</h2>
+            <div class="form-group row">
+              <label for="fullname" class="col-sm-2 col-form-label">ชื่อ-นามสกุล</label>
+              <div class="input-group col-sm-10">
+                <input type="text" name="firstname" class="form-control" placeholder="ชื่อ" required>
+                <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="sex" class="col-sm-2 col-form-label">เพศ</label>
+              <div class="col-sm-10">
+                <select class="form-control" required>
+                  <option>เลือกเพศ</option>
+                  <option>ชาย</option>
+                  <option>หญิง</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="username" class="col-sm-2 col-form-label">ชื่อผู้ใช้</label>
+              <div class="col-sm-10">
+                <input type="text" name="username" class="form-control" placeholder="ใช้เข้าสู่ระบบ" id="username" required>
+              </div>
+            </div>
+            <div class="row">
+              <label for="password" class="col-sm-2 col-form-label">รหัสผ่าน</label>
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control" placeholder="รหัสผ่านต้องมีอย่างน้อย 8-16 ตัว" id="password" required>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group">
+                  <input type="password" name="rpassword" class="form-control" placeholder="ยืนยันรหัสผ่านให้ตรงกัน" id="rpassword" required>
+                </div>
+              </div>
+            </div>
+            
+            <input type="file" class="hide-on-screen custom-file-input form-control" id="fileUpload" name="fileUpload" onchange="readURL(this)">
+            <div class="form-group-row text-center">
+              <figure class="figure">
+                <img src="img/img_avatar3.png" id="imgUpload" style="width:200px;" class="rounded" alt="">
+                <figcaption class="figure-caption">เลือกรูปเพื่อใช้เป็นโปรไฟล์ (หากไม่เลือกจะใช้รูปตั้งต้นเป็นโปรไฟล์)</figcaption>
+                <button type="button" class="btn purple-gradient" onclick="chooseImg()">เลือกรูปภาพ</button>
+              </figure>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+              <div class="input-group col-sm-10">
+                <input type="email" name="email" class="form-control" id="email" required>
+              </div>
+            </div>
+            <div class="text-center">
+              <input type="submit" name="r_submit" class="btn aqua-gradient" style="border-radius: 2em" value="สมัครสมาชิก">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- Central Modal Small -->
 
   <!-- Footer -->
   <?php include("Component/footerComponent.php") ?>
@@ -318,6 +406,13 @@
     $(document).ready(function() {
       $('[data-toggle="popover"]').popover();
     });
+  </script>
+
+  <script>
+    function chooseImg() {
+      var input = document.getElementById('fileUpload');
+      input.click();
+    }
   </script>
 
   <script src="script.js"></script>

@@ -113,11 +113,9 @@
 
                     <form name="frmMain">
                         <div class="px-4">
-                            <div class="table-wrapper">
-                                <!--Table-->
+                            <!-- <div class="table-wrapper">
                                 <table class="table table-striped mb-0">
 
-                                    <!--Table head-->
                                     <thead>
                                         <tr align="center">
                                             <th>รูปสินค้า</th>
@@ -127,24 +125,26 @@
                                             <th>&nbsp;</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <?php
-                                        $total_price = 0;
-                                        while ($meResult = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                            // $key = array_search($meResult['id'], $meResult);
-                                            $total_price = $total_price + $meResult['product_price'];
-                                        ?>
-                                            <tr align="center">
-                                                <td class="align-middle"><img style="width:130px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0"></td>
+                                    <tbody> -->
+                            <?php
+                            $total_price = 0;
+                            while ($meResult = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                // $key = array_search($meResult['id'], $meResult);
+                                $total_price = $total_price + $meResult['product_price'];
+                            ?>
+                                <!-- <tr align="center">
+                                                <td class="align-middle">
+                                                    <img style="width:130px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0">
+                                                </td>
                                                 <td class="align-middle">
                                                     <div>
                                                         <?php echo $meResult['product_name']; ?>
-                                                     </div>
+                                                    </div>
                                                 </td>
                                                 <td class="align-middle">
                                                     <div class="form-row">
                                                         <div class="col-sm-8 text-center">
-                                                            <select type="text" class="ml-auto col-sm-8 browser-default custom-select" id="quantity<?php echo $meResult['product_code'] ?>" name="<?php echo $meResult['product_code'] ?>" OnChange="finalsum<?php echo $meResult['product_code']; ?>(); do_selectchange(this); sendPrice();">
+                                                            <select type="text" class="ml-auto col-sm-9 browser-default custom-select" id="quantity<?php echo $meResult['product_code'] ?>" name="<?php echo $meResult['product_code'] ?>" OnChange="finalsum<?php echo $meResult['product_code']; ?>(); do_selectchange(this); sendPrice();">
                                                                 <option selected disabled value="<?php echo $meResult['product_num']; ?>"><?php echo $meResult['product_num']; ?></option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -175,54 +175,112 @@
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>
                                                         ลบออกจากตะกร้า</a>
                                                 </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                    <!--Table body-->
-                                </table>
-                                <!--Table-->
-                                <hr>
-                                <span id="mySpan">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div id="time"></div>
+                                            </tr> -->
+
+                                <div class="card view overlay mb-3">
+                                <div class="mask rgba-purple-slight"></div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <img style="width:130px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0">
+                                            </div>
+                                            <div class="col text-center my-auto">
+                                                <h6><?php echo $meResult['product_name']; ?></h6>
+                                            </div>
+                                            <div class="col text-center my-auto">
+                                                <div class="form-row">
+                                                    <div class="col-sm-8 text-center">
+                                                        <select type="text" class="ml-auto col-sm-9 browser-default custom-select" id="quantity<?php echo $meResult['product_code'] ?>" name="<?php echo $meResult['product_code'] ?>" OnChange="finalsum<?php echo $meResult['product_code']; ?>(); do_selectchange(this); sendPrice();">
+                                                            <option selected disabled value="<?php echo $meResult['product_num']; ?>"><?php echo $meResult['product_num']; ?></option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
+                                                    </div>
+                                                    <label class="col-sm-4 text-left col-form-label" for="">ชิ้น</label>
+                                                    <input class="hide-on-screen" id="p_pond<?php echo $meResult['product_code']; ?>" name="p_pond" OnChange="finalsum<?php echo $meResult['product_code']; ?>();" value=<?php echo $meResult['product_pond'] ?>>
+                                                </div>
+                                            </div>
+                                            <div class="col text-center my-auto">
+                                                <div class="form-row">
+                                                    <div class="col-sm-8 text-center">
+                                                        <input type="text" class="form-control col-sm-8 ml-auto text-center" name="<?php echo $meResult['product_code'] ?>" id="p_price<?php echo $meResult['product_code']; ?>" onclick="do_selectchange2(this)" value="<?php echo $meResult['product_price'] ?>" readonly>
+                                                    </div>
+                                                    <label class="col-sm-4 text-left col-form-label" for="">บาท</label>
+                                                </div>
+                                            </div>
+                                            <div class="col text-center my-auto">
+                                                <a class="btn btn-info" href="php/deletecart.php?product_code=<?php echo $meResult['product_code']; ?>" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ?')" role="submit">
+                                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                                    <i class="fas fa-trash" aria-hidden="true"></i></a>
+                                            </div>
                                         </div>
-                                        <div class="col">
-                                            <h4 class="text-right" id="price"></h4>
-                                        </div>
-                                    </div>
-
-                                </span>
-                                <hr>
-                            </div>
-
-                            <div class="col">
-                                <div class="row">
-                                    <div class="mx-auto">
-
-                                        <a href="order1.php" class="btn btn-primary" role="button">สั่งซื้อเพิ่มเติม</a>
-                                        <a href="php/deleteall_cart.php" class="btn btn-danger" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ทั้งหมดใช่หรือไม่ ?')" role="submit">ล้างตะกร้าสินค้า</a>
-                                        <a href="payment.php" class="btn btn-success" role="button">ชำระเงิน</a>
-
 
                                     </div>
                                 </div>
-                            </div>
+                            <?php
+                            }
+                            ?>
+                            <!-- </tbody>
+                                </table> -->
+                            <hr>
+                            <span id="mySpan">
+                                <div class="row">
+                                    <div class="col">
+                                        <div id="time"></div>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="text-right" id="price"></h4>
+                                    </div>
+                                </div>
 
+                            </span>
+                            <hr>
                         </div>
-                    </form>
-                <?php } ?>
+
+                        <div class="col">
+                            <div class="row">
+                                <div class="mx-auto">
+
+                                    <a href="order1.php" class="btn btn-primary" role="button">สั่งซื้อเพิ่มเติม</a>
+                                    <a href="php/deleteall_cart.php" class="btn btn-danger" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ทั้งหมดใช่หรือไม่ ?')" role="submit">ล้างตะกร้าสินค้า</a>
+                                    <a href="payment.php" class="btn btn-success" role="button">ชำระเงิน</a>
+
+                                </div>
+                            </div>
+                        </div>
 
             </div>
-            <!-- Table with panel -->
+            </form>
+        <?php } ?>
+
         </div>
+        <!-- Table with panel -->
+        </div>
+
         <!-- Footer -->
         <?php include("Component/footerComponent.php") ?>
         <!-- Footer -->
 
-
+        <!-- <select name="" id="" onchange="but()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <input type="text" id="pp">
+        <script>
+            function but() {
+                var input = document.getElementById('pp');
+                input.select();
+                input.focus();
+            }
+        </script> -->
 
         <!-- Script -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -311,7 +369,7 @@
                         };
                     };
                 };
-                req.open("POST", "php/update_order.php?product_code=<?php echo $meResult['product_code'] ?>&product_name=<?php echo $meResult['product_name'] ?>"); //สร้าง connection
+                req.open("POST", "php/update_order.php?product_code=<?php echo $meResult['product_code'] ?>"); //สร้าง connection
                 req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // set Header
                 req.send(query); //ส่งค่า
             }

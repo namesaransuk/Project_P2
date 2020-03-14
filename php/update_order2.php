@@ -14,7 +14,7 @@
   $product_price = $_POST['product_price'];
 
   //อัปเดทลงฐานข้อมูลที่นี่ //ตัวอย่างคืนค่าที่ส่งมากลับไปแสดงผล
-  echo 'id='.$id.'&product_code='.$product_code.'&product_price='.$product_price;
+  // echo 'id='.$id.'&product_code='.$product_code.'&product_price='.$product_price;
   $sql = "UPDATE `products` SET `product_price`='$product_price' WHERE product_code = '$product_code'";
   $stmt = $conn->query($sql);
 // echo '<div class="alert alert-success" role="alert">

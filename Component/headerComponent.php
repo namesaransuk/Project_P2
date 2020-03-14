@@ -80,7 +80,7 @@
                 ยินดีต้อนรับ คุณ <?php echo $_SESSION['name'] ?>
               </a>
               <div class="dropdown-menu text-center">
-                <a class="dropdown-item" href="#">ข้อมูลส่วนตัว</a>
+                <a class="dropdown-item" href="profile.php">ข้อมูลส่วนตัว</a>
                 <a class="dropdown-item" href="#">ตะกร้าสินค้าของฉัน</a>
                 <a class="dropdown-item" href="#">สถานะการจัดส่ง</a>
                 <div class="dropdown-divider"></div>

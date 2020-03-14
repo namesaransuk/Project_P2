@@ -230,7 +230,7 @@
       <div class="card-group d-flex flex-row flex-nowrap scroll-x">
 
         <div class="card shadow mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/ครีมมี่บัตเตอร์.png">
+          <img class="card-img-top" src="products/ครีมมี่บัตเตอร์.png">
           <div class="card-body">
             <h5 class="card-title text-center">ครีมมี่ บัตเตอร์</h5>
             <p class="card-text text-center">
@@ -241,7 +241,7 @@
         </div>
 
         <div class="card shadow-md mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/ครีมชีสช็อกโกแลต.png">
+          <img class="card-img-top" src="products/ครีมชีสช็อกโกแลต.png">
           <div class="card-body">
             <h5 class="card-title text-center">ครีมชีสช็อกโกแลต</h5>
             <p class="card-text text-center">
@@ -252,7 +252,7 @@
         </div>
 
         <div class="card shadow-md mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/ชูวี่สตรอเบอร์รี่.png">
+          <img class="card-img-top" src="products/ชูวี่สตรอเบอร์รี่.png">
           <div class="card-body">
             <h5 class="card-title text-center">ชูวี่สตรอเบอร์รี่</h5>
             <p class="card-text text-center">
@@ -263,7 +263,7 @@
         </div>
 
         <div class="card shadow-md mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/วีตพรุน.png">
+          <img class="card-img-top" src="products/วีตพรุน.png">
           <div class="card-body">
             <h5 class="card-title text-center">วีตพรุน</h5>
             <p class="card-text text-center">
@@ -274,7 +274,7 @@
         </div>
 
         <div class="card shadow-md mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/พาราดิโซ่.png">
+          <img class="card-img-top" src="products/พาราดิโซ่.png">
           <div class="card-body">
             <h5 class="card-title text-center">พาราดิโซ่</h5>
             <p class="card-text text-center">
@@ -285,7 +285,7 @@
         </div>
 
         <div class="card shadow-md mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/พีนัทบัตเตอร์ช็อกโกแลต.png">
+          <img class="card-img-top" src="products/พีนัทบัตเตอร์ช็อกโกแลต.png">
           <div class="card-body">
             <h5 class="card-title text-center">พีนัทบัตเตอร์ช็อกโกแลต</h5>
             <p class="card-text text-center">
@@ -296,7 +296,7 @@
         </div>
 
         <div class="card shadow-md mb-2 mx-1">
-          <img class="card-img-top" src="img/เค้ก/ดับเบิ้ลช็อกโกแลตฟัดจ์.png">
+          <img class="card-img-top" src="products/ดับเบิ้ลช็อกโกแลตฟัดจ์.png">
           <div class="card-body">
             <h5 class="card-title text-center">ดับเบิ้ลช็อกโกแลตฟัดจ์</h5>
             <p class="card-text text-center">
