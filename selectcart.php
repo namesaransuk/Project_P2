@@ -135,6 +135,7 @@
                             ?>
 
                                 <!-- <tr align="center">
+
                                                 <td class="align-middle">
                                                     <img style="width:130px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0">
                                                 </td>
@@ -179,51 +180,69 @@
                                                 </td>
                                             </tr> -->
 
-                                <div class="card view overlay mb-3">
-                                    <div class="mask rgba-purple-slight"></div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <img style="width:130px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0">
-                                            </div>
-                                            <div class="col text-center my-auto">
-                                                <h6><?php echo $meResult['product_name']; ?></h6>
-                                            </div>
-                                            <div class="col text-center my-auto">
-                                                <div class="form-row">
-                                                    <div class="col-sm-8 text-center">
-                                                        <select type="text" class="ml-auto col-sm-9 browser-default custom-select" id="quantity<?php echo $meResult['product_code'] ?>" name="<?php echo $meResult['product_code'] ?>" onchange="do_selectchange(this);finalsum();sendPrice();">
-                                                            <option selected disabled value="<?php echo $meResult['product_num']; ?>"><?php echo $meResult['product_num']; ?></option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
-                                                        </select>
+                                            <div class="card view overlay mb-3">
+                                                <div class="mask rgba-purple-slight"></div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col text-center">
+                                                            <img style="width:130px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0">
+                                                        </div>
+                                                        <div class="col text-center my-auto">
+                                                            <h6><?php echo $meResult['product_name']; ?></h6>
+                                                        </div>
+                                                        <div class="col text-center my-auto">
+                                                            <div class="form-row">
+                                                                <div class="col-sm-8 text-center">
+                                                                    <select type="text" class="ml-auto col-sm-9 browser-default custom-select" id="quantity<?php echo $meResult['product_code'] ?>" name="<?php echo $meResult['product_code'] ?>" OnChange="finalsum(); do_selectchange(this); sendPrice();">
+                                                                        <option selected disabled value="<?php echo $meResult['product_num']; ?>"><?php echo $meResult['product_num']; ?></option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                    </select>
+                                                                </div>
+                                                                <label class="col-sm-4 text-left col-form-label" for="">ชิ้น</label>
+                                                                <input class="hide-on-screen" id="p_pond<?php echo $meResult['product_code']; ?>" name="p_pond" OnChange="finalsum();" value=<?php echo $meResult['product_pond'] ?>>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-center my-auto">
+                                                            <div class="form-row">
+                                                                <div class="col-sm-8 text-center">
+                                                                    <input type="text" class="form-control col-sm-8 ml-auto text-center" name="<?php echo $meResult['product_code'] ?>" id="p_price<?php echo $meResult['product_code']; ?>" onclick="do_selectchange2(this)" value="<?php echo $meResult['product_price'] ?>" readonly>
+                                                                </div>
+                                                                <label class="col-sm-4 text-left col-form-label" for="">บาท</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col text-center my-auto">
+                                                            <a class="btn btn-info" href="php/deletecart.php?product_code=<?php echo $meResult['product_code']; ?>" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ?')" role="submit">
+                                                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                                                <i class="fas fa-trash" aria-hidden="true"></i></a>
+                                                        </div>
                                                     </div>
-                                                    <label class="col-sm-4 text-left col-form-label" for="">ชิ้น</label>
-                                                    <input class="hide-on-screen" id="p_pond<?php echo $meResult['product_code']; ?>" name="p_pond" OnChange="finalsum();" value=<?php echo $meResult['product_pond'] ?>>
+
                                                 </div>
                                             </div>
-                                            <div class="col text-center my-auto">
-                                                <div class="form-row">
-                                                    <div class="col-sm-8 text-center">
-                                                        <input type="text" class="form-control col-sm-8 ml-auto text-center" name="<?php echo $meResult['product_code'] ?>" id="p_price<?php echo $meResult['product_code']; ?>" onfocus="do_selectchange2(this)" value="<?php echo $meResult['product_price'] ?>" readonly>
-                                                    </div>
-                                                    <label class="col-sm-4 text-left col-form-label" for="">บาท</label>
+                                        <?php
+                                        }
+                                        ?>
+                                        <!-- </tbody>
+                                </table> -->
+                                        <hr>
+                                        <span id="mySpan">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div id="time"></div>
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="text-right" id="price"></h4>
                                                 </div>
                                             </div>
-                                            <div class="col text-center my-auto">
-                                                <a class="btn btn-info" href="php/deletecart.php?product_code=<?php echo $meResult['product_code']; ?>" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ?')" role="submit">
-                                                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                                                    <i class="fas fa-trash" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
 
                                     </div>
                                 </div>
@@ -247,24 +266,24 @@
                             <hr>
                         </div>
 
-                        <div class="col">
-                            <div class="row">
-                                <div class="mx-auto">
 
-                                    <a href="order1.php" class="btn btn-primary" role="button">สั่งซื้อเพิ่มเติม</a>
-                                    <a href="php/deleteall_cart.php" class="btn btn-danger" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ทั้งหมดใช่หรือไม่ ?')" role="submit">ล้างตะกร้าสินค้า</a>
-                                    <a href="payment.php" class="btn btn-success" role="button">ชำระเงิน</a>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="mx-auto">
 
+                                        <a href="order1.php" class="btn btn-primary" role="button">สั่งซื้อเพิ่มเติม</a>
+                                        <a href="php/deleteall_cart.php" class="btn btn-danger" onClick="return confirm('คุณต้องการลบข้อมูลที่เลือก ทั้งหมดใช่หรือไม่ ?')" role="submit">ล้างตะกร้าสินค้า</a>
+                                        <a href="payment.php" class="btn btn-success" role="button">ชำระเงิน</a>
+
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+                    </form>
 
             </div>
-            </form>
-        <?php } ?>
-
-        </div>
-        <!-- Table with panel -->
+            <!-- Table with panel -->
         </div>
 
         <!-- Footer -->
@@ -431,7 +450,8 @@
 
     </html>
 
-<?php } else {
+<?php 
+} else {
     echo '<script> alert("กรุณาเข้าสู่ระบบอีกครั้ง") </script>';
     header('Refresh:0 url=index.php');
 }
