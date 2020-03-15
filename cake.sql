@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2020 at 07:35 PM
+-- Generation Time: Mar 15, 2020 at 08:33 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -36,6 +36,13 @@ CREATE TABLE `member` (
   `password` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL COMMENT 'รูปภาพ',
   `email` varchar(255) NOT NULL COMMENT 'อีเมล์',
+  `a_home` varchar(10) NOT NULL,
+  `a_a_home` varchar(10) NOT NULL,
+  `a_street` varchar(255) NOT NULL,
+  `a_tumbon` varchar(255) NOT NULL,
+  `a_aumpher` varchar(255) NOT NULL,
+  `a_province` varchar(255) NOT NULL,
+  `a_code` varchar(5) NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -43,9 +50,9 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`id`, `firstname`, `lastname`, `username`, `password`, `picture`, `email`, `status`) VALUES
-(0, 'admin', 'admin', 'admin', 'admin', '', '', 'admin'),
-(1, 'Saransuk', 'Yimyong', 'saransuk', '12345678', '1570183421.jpg', 'asd@gmail.com', '');
+INSERT INTO `member` (`id`, `firstname`, `lastname`, `username`, `password`, `picture`, `email`, `a_home`, `a_a_home`, `a_street`, `a_tumbon`, `a_aumpher`, `a_province`, `a_code`, `status`) VALUES
+(0, 'admin', 'admin', 'admin', 'admin', '', '', '', '', '', '', '', '', '', 'admin'),
+(1, 'Jetsadakorn', 'Soda', 'jetsadakorn', '12345678', '89259385_137943384248617_8140271217123786752_n.jpg', 'namesaransuk@gmail.com', '111', '10', 'มนตรีสุริยวงศ์', 'หน้าเมือง', 'เมือง', 'ราชบุรี', '70000', '');
 
 -- --------------------------------------------------------
 
@@ -61,6 +68,28 @@ CREATE TABLE `oproducts` (
   `product_price` int(11) NOT NULL,
   `product_pond` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `o_id` int(11) NOT NULL,
+  `o_number` varchar(10) NOT NULL,
+  `o_date` varchar(60) NOT NULL,
+  `o_detail` varchar(30) NOT NULL,
+  `o_delivery` varchar(20) NOT NULL,
+  `o_status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`o_id`, `o_number`, `o_date`, `o_detail`, `o_delivery`, `o_status`) VALUES
+(1, 'bon1233456', '16 มีนาคม 2563 / 01:22', 'พนักงาน FoodPanda', 'ems12345678', '');
 
 -- --------------------------------------------------------
 
@@ -108,6 +137,13 @@ CREATE TABLE `products` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_code`, `product_name`, `product_img_name`, `product_num`, `product_price`, `product_pond`, `product_id`) VALUES
+(1, 'ครีมชีสช็อกโกแลต', 'ครีมชีสช็อกโกแลต.png', 1, 720, 720, 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -123,6 +159,12 @@ ALTER TABLE `member`
 ALTER TABLE `oproducts`
   ADD PRIMARY KEY (`product_code`),
   ADD KEY `product_name` (`product_name`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`o_id`);
 
 --
 -- Indexes for table `product`
@@ -157,6 +199,12 @@ ALTER TABLE `oproducts`
   MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `o_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -166,7 +214,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_code` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -524,7 +524,42 @@ if (isset($_SESSION['id'])) {
                                 </div>
                                 <div class="col-sm-6 border border-light">
                                     <h5 class="mt-2">ข้อมูลการชำระเงิน</h5>
-                                    <div class="row">
+                                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                        <table class="table table-hover mb-0">
+                                            <!--Table head-->
+                                            <thead>
+                                                <tr align="center">
+                                                    <th>รูปสินค้า</th>
+                                                    <th>ชื่อสินค้า</th>
+                                                    <th>จำนวน</th>
+                                                    <th>ราคา</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                include("php/connect.php");
+                                                $sql = "SELECT * FROM products";
+                                                $stmt = $conn->prepare($sql);
+                                                $stmt->execute();
+                                                $total_price = 0;
+                                                while ($meResult = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                                    $total_price = $total_price + $meResult['product_price'];
+
+                                                ?>
+                                                    <tr align="center">
+                                                        <td class="align-middle"><img style="width:100px;" src="products/<?php echo $meResult['product_img_name']; ?>" border="0"></td>
+                                                        <td class="align-middle"><?php echo $meResult['product_name']; ?></td>
+                                                        <td class="align-middle"><?php echo $meResult['product_num']; ?> ชิ้น</td>
+                                                        <td class="align-middle"><?php echo number_format($meResult['product_price']); ?> บาท</td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <div class="row mt-3">
                                         <label for="" class="col-sm-3">จำนวน :</label>
                                         <label class="col-sm-9">
                                             <?php
@@ -543,11 +578,9 @@ if (isset($_SESSION['id'])) {
                                         <label class="col-sm-9"><?php echo number_format($total_price) ?> บาท</label>
                                     </div>
                                     <hr>
-                                    <div class="row">
+                                    <div class="row mb-3">
                                         <label for="" class="col-sm-3">ที่อยู่การจัดส่ง :</label>
-                                        <label id="address" class="col-sm-9">
-
-                                        </label>
+                                        <label id="address" class="col-sm-9"></label>
                                     </div>
                                 </div>
                             </div>
@@ -569,6 +602,14 @@ if (isset($_SESSION['id'])) {
                 <table width="100%" border="0" cellpadding="0" id="table_4" style="display:none">
                     <tr>
                         <td>
+                            <div class="row mb-5">
+                                <div class="col text-center">
+                                    <i class="fas fa-check fa-4x mb-3 animated rotateIn text-success"></i><br>
+                                    <h3 class="text-success">การชำระเงินสำเร็จ!ขอบคุณที่ใช้บริการ BON'isCAKE </h3>
+                                    <br>
+                                    <h5> <i class="fas fa-birthday-cake"></i> การชำระเงินเรียบร้อย เรากำลังจัดสั่งสินค้าไห้ท่าน <i class="fas fa-birthday-cake"></i></h5>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col mr-auto text-left">
                                     <button type="button" id="prev3" class="btn peach-gradient" onClick="show_table(this.value);" value="3">ก่อนหน้า</button>
@@ -596,14 +637,14 @@ if (isset($_SESSION['id'])) {
                                         <div class="modal-body">
                                             <div class="text-center">
                                                 <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
-                                                <p>เสร็จสิ้นการทำรายการ. กรุณารอการทำรายการ 30 นาที ระบบจะแจ้งสถานะไปที่อีเมล์ของท่าน</p>
+                                                <p>เสร็จสิ้นการทำรายการ. กรุณารอการทำรายการ 30 นาที ระบบจะแจ้งสถานะไปที่หน้าสถานะการจัดส่ง กรุณาคลิก 'ตกลง' เพื่อไปที่หน้าสถานะการจัดส่ง</p>
                                                 <h5><i class="fas fa-birthday-cake"></i> ขอขอบคุณที่ไว้วางใจในสินค้าของเรา <i class="fas fa-birthday-cake"></i></h5>
                                             </div>
                                         </div>
 
                                         <!--Footer-->
                                         <div class="modal-footer justify-content-center">
-                                            <button type="submit" class="btn btn-success" onclick="window.location.href='loading.php'" onclick="window.location.href='loading.php?product_code=<?php echo $meResult['product_code']; ?>'">กลับสู่หน้าแรก <i class="fas fa-external-link-alt"></i></button>
+                                            <button type="submit" class="btn btn-success" onclick="window.location.href='loading.php'">ตกลง <i class="fas fa-external-link-alt"></i></button>
                                         </div>
                                     </div>
                                     <!--/.Content-->

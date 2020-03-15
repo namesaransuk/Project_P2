@@ -3,11 +3,11 @@
     session_start();
 
     include("php/connect.php");
-    $sql = "DELETE FROM products;";
-        $stmt = $conn->prepare($sql);
+    // $sql = "DELETE FROM products;";
+    //     $stmt = $conn->prepare($sql);
 
-        $stmt->bindParam(':product_code', $_GET['product_code']);
-        $stmt->execute();
+    //     $stmt->bindParam(':product_code', $_GET['product_code']);
+    //     $stmt->execute();
         
     session_destroy();
     

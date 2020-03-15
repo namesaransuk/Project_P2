@@ -81,6 +81,8 @@
           <i class="fas fa-map mr-3"></i>Maps</a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-money-bill-alt mr-3"></i>Orders</a>
+        <a href="check_status.php" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-money-bill-alt mr-3"></i>Status</a>
       </div>
 
     <?php } else if ($_SERVER['SCRIPT_NAME'] == '/Project_P2/Admin/add_order.php') { ?>

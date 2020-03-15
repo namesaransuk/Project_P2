@@ -76,13 +76,19 @@
           <?php if (isset($_SESSION['id'])) { ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="uploads/<?php echo $_SESSION['img'] ?>" style="width:30px; height:30px ;border-radius:100%;" alt="">
-                ยินดีต้อนรับ คุณ <?php echo $_SESSION['name'] ?>
+                <?php
+                include('php/connect.php');
+                $sql = "SELECT * FROM `member` WHERE id = '".$_SESSION['id']."'";
+                $stmt = $conn->query($sql);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                ?>
+                <img src="uploads/<?php echo $result['picture'] ?>" style="width:30px; height:30px ;border-radius:100%;" alt="">
+                ยินดีต้อนรับ คุณ <?php echo $result['firstname'] ?>
               </a>
               <div class="dropdown-menu text-center">
                 <a class="dropdown-item" href="profile.php">ข้อมูลส่วนตัว</a>
                 <a class="dropdown-item" href="#">ตะกร้าสินค้าของฉัน</a>
-                <a class="dropdown-item" href="#">สถานะการจัดส่ง</a>
+                <a class="dropdown-item" href="delivery.php">สถานะการจัดส่ง</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="logout.php">ออกจากระบบ</a>
               </div>
