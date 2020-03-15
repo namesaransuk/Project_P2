@@ -45,30 +45,52 @@
 
  <body>
 
-   <?php
-    include("php/connect.php");
-    $sql = "SELECT * FROM products";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    ?>
+   <select id="s_a" onchange="do_selectchange(this)">
+     <option value="a1">a1</option>
+     <option value="a2">a2</option>
+     <option value="a2">a2</option>
+   </select>
+   <select id="s_b" onchange="do_selectchange(this)">
+     <option value="b1">b1</option>
+     <option value="b2">b2</option>
+     <option value="b2">b2</option>
+   </select>
+   <script type="text/javascript">
+     function Inint_AJAX() {
 
-   <!-- header -->
-   <?php include("Component/headerComponent.php") ?>
+       try {
+         return new ActiveXObject("Msxml2.XMLHTTP");
+       } catch (e) {} //IE
 
+       try {
+         return new ActiveXObject("Microsoft.XMLHTTP");
+       } catch (e) {} //IE
 
-   <div class="container mt-5 mb-5">
-     <div class="card">
-       <div class="card-body">
+       try {
+         return new XMLHttpRequest();
+       } catch (e) {} //Native Javascript
 
-         
-       </div>
-     </div>
-   </div>
+       alert("XMLHttpRequest not supported");
 
+       return null;
 
-   <!-- Footer -->
-   <?php include("Component/footerComponent.php") ?>
-   <!-- Footer -->
+     };
+
+     function do_selectchange(sel) {
+       var query = 'id=' + sel.id + '&value=' + sel.value; //ค่าที่ส่งมาใช้เพื่อส่งไปอัปเดท
+       var req = Inint_AJAX();
+       req.onreadystatechange = function() {
+         if (req.readyState == 4) {
+           if (req.status == 200) {
+             alert(req.responseText); //เมื่ออัปเดทเรียบร้อย (อาจแสดงข้อความว่าอัปเดทเรียบร้อยก็ได้)
+           };
+         };
+       };
+       req.open("POST", "t1.php"); //สร้าง connection
+       req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // set Header
+       req.send(query); //ส่งค่า
+     }
+   </script>
 
 
 
@@ -88,7 +110,7 @@
 
    <script src="script.js"></script>
 
-   
+
 
    <script>
      $(document).ready(function() {

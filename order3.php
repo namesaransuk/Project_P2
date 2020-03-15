@@ -64,7 +64,7 @@
             <div class="col-4">
 
                 <div class="card shadow-sm" style="min-width:9rem;">
-                    <img src="img/เค้ก/มิลค์กี้ช็อคกี้.png" class="card-img-top" alt="...">
+                    <img src="products/มิลค์กี้ช็อคกี้.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">มิลค์กี้ช็อคกี้</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="card shadow-sm mt-3" style="min-width:9rem;">
-                    <img src="img/เค้ก/โรเซ่ คาโรล่า กาแฟ.png" class="card-img-top" alt="...">
+                    <img src="products/โรเซ่ คาโรล่า กาแฟ.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">โรเซ่ คาโรล่า กาแฟ</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal3"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="card shadow-sm mt-3" style="min-width:9rem;">
-                    <img src="img/เค้ก/วีตพรุน.png" class="card-img-top" alt="...">
+                    <img src="products/วีตพรุน.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">วีตพรุน</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal6"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -151,7 +151,7 @@
             <div class="col-4">
 
                 <div class="card shadow-sm" style="min-width:9rem;">
-                    <img src="img/เค้ก/มิลค์กี้ทูโทน.png" class="card-img-top" alt="...">
+                    <img src="products/มิลค์กี้ทูโทน.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">มิลค์กี้ทูโทน</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal1"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -180,7 +180,7 @@
 
 
                 <div class="card shadow-sm mt-3" style="min-width:9rem;">
-                    <img src="img/เค้ก/โรเซ่ คาโรล่า ช็อกโกแลต.png" class="card-img-top" alt="...">
+                    <img src="products/โรเซ่ คาโรล่า ช็อกโกแลต.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">โรเซ่ คาโรล่า ช็อกโกแลต</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal4"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -207,7 +207,7 @@
                 </div>
 
                 <div class="card shadow-sm mt-3" style="min-width:9rem;">
-                    <img src="img/เค้ก/ไวท์เพิร์ลบัตเตอร์.png" class="card-img-top" alt="...">
+                    <img src="products/ไวท์เพิร์ลบัตเตอร์.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">ไวท์เพิร์ลบัตเตอร์</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal7"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -240,7 +240,7 @@
             <div class="col-4">
 
                 <div class="card shadow-sm" style="min-width:9rem;">
-                    <img src="img/เค้ก/มิลค์กี้ไวท์ช็อก.png" class="card-img-top" alt="...">
+                    <img src="products/มิลค์กี้ไวท์ช็อก.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">มิลค์กี้ไวท์ช็อก</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -267,7 +267,7 @@
                 </div>
 
                 <div class="card shadow-sm mt-3" style="min-width:9rem;">
-                    <img src="img/เค้ก/โรเซ่ คาโรล่า วนิลา.png" class="card-img-top" alt="...">
+                    <img src="products/โรเซ่ คาโรล่า วนิลา.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">โรเซ่ คาโรล่า วนิลา</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal5"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
@@ -294,7 +294,7 @@
                 </div>
 
                 <div class="card shadow-sm mt-3" style="min-width:9rem;">
-                    <img src="img/เค้ก/อัลมอนด์มอคค่า.png" class="card-img-top" alt="...">
+                    <img src="products/อัลมอนด์มอคค่า.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">อัลมอนด์มอคค่า</h6>
                         <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#exampleModal8"><i class="fas fa-cart-plus"></i> เพิ่ม</a>
